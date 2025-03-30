@@ -1,0 +1,1 @@
+python run_styleid.py --cnt data/cnt --sty data/sty --gamma 0.75 --T 1.5  # default

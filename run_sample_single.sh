@@ -1,0 +1,1 @@
+python run_styleid_single.py --cnt data/cnt/00.png --sty data/sty/00.png --gamma 0.75 --T 1.5  # default
