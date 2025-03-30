@@ -5,7 +5,7 @@ from omegaconf import OmegaConf
 from PIL import Image
 from einops import rearrange
 from pytorch_lightning import seed_everything
-from torch import autocast
+from torch.cuda.amp import autocast
 from contextlib import nullcontext
 import copy
 
@@ -227,7 +227,7 @@ def main():
                 cnt_z_enc = feat_maps[0]['z_enc']
 
             with torch.no_grad():
-                with precision_scope("cuda"):
+                with precision_scope(True):
                     with model.ema_scope():
                         # inversion
                         output_name = f"{os.path.basename(cnt_name).split('.')[0]}_stylized_{os.path.basename(sty_name).split('.')[0]}.png"

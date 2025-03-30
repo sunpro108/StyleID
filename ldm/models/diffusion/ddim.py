@@ -303,9 +303,17 @@ class DDIMSampler(object):
         return x_prev, pred_x0
 
     @torch.no_grad()
-    def encode_ddim(self, img, num_steps, conditioning=None, unconditional_conditioning=None ,unconditional_guidance_scale=1., \
-                    end_step=999, callback_ddim_timesteps=None, img_callback=None):
-        
+    def encode_ddim(
+        self,
+        img,
+        num_steps,
+        conditioning=None,
+        unconditional_conditioning=None,
+        unconditional_guidance_scale=1.,
+        end_step=999,
+        callback_ddim_timesteps=None,
+        img_callback=None
+    ):
         print(f"Running DDIM inversion with {num_steps} timesteps")
         if num_steps == 999:
             T = 999

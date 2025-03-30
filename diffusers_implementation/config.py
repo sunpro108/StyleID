@@ -20,5 +20,5 @@ def get_args():
     parse.add_argument('--sty_fn', type=str, required=True)
     parse.add_argument('--save_dir', type=str, default='results')
     
-    cfg = parse.parse_args()
+    cfg = parse.parse_args([])
     return cfg
